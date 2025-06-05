@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Flash Cards</title>    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- User Info Display -->
+    <div class="user-info" id="userInfo" style="display: none;"></div>
+    
+    <!-- Logout Button -->
+    <button class="logout-btn" id="logoutBtn" style="display: none;">Sign Out</button>
+      <div id="app" style="display: none;">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <button class="icon-button close-btn" id="closeBtn">✕</button>
+            <div class="progress-label" id="progressLabel">0 / 0</div>
+            <button class="icon-button settings-btn" id="settingsBtn">⚙️</button>
+        </header>
+
+        <!-- Counter Pills -->
+        <div class="counters">
+            <div class="counter-pill know-pill" id="knowPill">
+                <span class="counter-label">Know</span>
+                <span class="counter-value" id="knowCounter">0</span>
+            </div>
+            <div class="counter-pill learning-pill" id="learningPill">
+                <span class="counter-label">Still learning</span>
+                <span class="counter-value" id="learningCounter">0</span>
+            </div>
+        </div>
+
+        <!-- Card Container -->
+        <div class="card-container" id="cardContainer">
+            <div class="flashcard" id="flashcard">
+                <div class="card-inner">
+                    <!-- Front Side -->
+                    <div class="card-front">
+                        <button class="card-icon audio-btn" id="audioBtn">🔊</button>
+                        <button class="card-icon star-btn" id="starBtn">☆</button>
+                        <div class="card-content">
+                            <div class="primary-text" id="primaryText">Word</div>
+                            <div class="secondary-text" id="secondaryText"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Side -->
+                    <div class="card-back">
+                        <button class="card-icon audio-btn" id="audioBtnBack">🔊</button>
+                        <button class="card-icon star-btn" id="starBtnBack">☆</button>
+                        <div class="card-content">
+                            <div class="translation" id="translation">Translation</div>
+                            <div class="example" id="example"></div>
+                            <div class="notes" id="notes"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="bottom-controls">
+            <button class="control-btn undo-btn" id="undoBtn">↺</button>
+            <button class="control-btn next-btn" id="nextBtn">▶️</button>
+        </div>        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+        
+        <!-- Account Settings Modal -->
+        <div class="account-settings" id="accountSettings">
+            <div class="settings-modal">
+                <div class="settings-header">
+                    <h3>Account Settings</h3>
+                    <button class="close-settings" id="closeSettings">✕</button>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="settings-label">Export Progress</div>
+                    <div class="settings-description">Download your learning progress as a backup file</div>
+                    <button class="export-btn" id="exportBtn">Export Data</button>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="settings-label">Delete Account</div>
+                    <div class="settings-description">Permanently delete your account and all progress</div>
+                    <button class="danger-btn" id="deleteAccountBtn">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
